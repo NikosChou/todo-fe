@@ -1,0 +1,30 @@
+.todo-input {
+  width: 300px;
+}
+
+.todo-input-completed {
+  text-decoration: line-through;
+}
+
+.example-margin {
+  margin: 0 10px;
+}
+
+.todo-flex {
+  display: flex;
+  justify-content: space-around;
+}
+
+.pl-1 {
+  padding-left: 1rem;
+  margin-left: auto;
+}
+
+.completed-todo {
+  text-decoration: line-through;
+}
+
+.todo-subtitle {
+  display: flex;
+  justify-content: space-around;
+}

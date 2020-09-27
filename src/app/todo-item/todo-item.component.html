@@ -1,0 +1,19 @@
+<mat-card>
+    <mat-card-title class="todo-flex" [ngClass]="{'completed-todo': item.completed}">
+        <div *ngIf="!edit">{{item.title}}</div>
+        <mat-form-field *ngIf="edit" class="todo-input">
+            <mat-label>Title</mat-label>
+            <input matInput type="text" [(ngModel)]="item.title" (keydown.enter)="updateItem()">
+        </mat-form-field>
+        <div class="pl-1">
+            <mat-checkbox class="todo-margin" [checked]="item.completed" (click)="completed.emit(item)"></mat-checkbox>
+        </div>
+    </mat-card-title>
+    <mat-card-subtitle class="todo-subtitle">
+        <button mat-button (click)="edit = !edit" [disabled]="item.completed">Edit</button>
+        <button mat-button color="warn" (click)="delete.emit(item)">Delete</button>
+    </mat-card-subtitle>
+    <mat-card-footer>
+        <small>created at: {{item.createdAt | date:'short'}}</small>
+    </mat-card-footer>
+</mat-card>

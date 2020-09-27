@@ -1,0 +1,17 @@
+<mat-card>
+    <mat-card-title>
+        <div><span>Create new TODO</span></div>
+        <mat-form-field class="todo-input">
+            <mat-label>Title</mat-label>
+            <input matInput class="new-todo-field-width" type="text" [(ngModel)]="title">
+        </mat-form-field>
+        <br>
+        <mat-form-field class="new-todo-field-width">
+            <input matInput class="new-todo-field-width" type="datetime-local" placeholder="Due date"
+                [ngModel]="dueDate | date:'yyyy-MM-ddTHH:mm'">
+        </mat-form-field>
+    </mat-card-title>
+    <mat-card-subtitle class="todo-subtitle">
+        <button mat-raised-button color="primary" (click)="createNewTodo()">Save</button>
+    </mat-card-subtitle>
+</mat-card>
