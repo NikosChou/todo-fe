@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter, ViewChild, ElementRef } from '@angular/core';
 import { Item, Status } from '../model/model';
 
 
@@ -12,16 +12,28 @@ export class TodoItemComponent implements OnInit {
   @Output() completed = new EventEmitter()
   @Output() update = new EventEmitter()
   @Output() delete = new EventEmitter()
+  @ViewChild('titleInput') titleInput: ElementRef;
+  title: string
 
   edit: boolean = false;
   constructor() { }
 
   ngOnInit(): void {
+    this.title = this.item.title
+  }
+
+  save(event) {
+    this.updateItem()
+    event.stopPropagation()
   }
 
   updateItem() {
+    this.item.title = this.title
     this.update.emit(this.item)
     this.edit = false
   }
 
+  setEdit() {
+    this.edit = true
+  }
 }

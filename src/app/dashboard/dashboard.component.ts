@@ -48,11 +48,12 @@ export class DashboardComponent implements OnInit {
   }
 
   createNewTodo(item: Item) {
-    console.log("asdas")
-    this.itemService.addItem(item).subscribe(data => {
-      if (data != undefined)
-        this.items.push(data)
-    })
+    if (item.title != undefined) {
+      this.itemService.addItem(item).subscribe(data => {
+        if (data != undefined)
+          this.items.push(data)
+      })
+    }
   }
 
   deleteItem(item: Item) {

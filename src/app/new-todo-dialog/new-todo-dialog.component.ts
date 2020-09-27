@@ -17,6 +17,10 @@ export class NewTodoDialogComponent implements OnInit {
   }
 
   createNewTodo() {
+    if(this.title == undefined) {
+      this.dialogRef.close()
+      return
+    }
     const item = {
       id: null,
       createdAt: null,

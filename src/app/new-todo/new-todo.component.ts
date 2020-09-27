@@ -4,7 +4,7 @@ import { NewTodoDialogComponent } from '../new-todo-dialog/new-todo-dialog.compo
 
 @Component({
   selector: 'app-new-todo',
-  template: '<button mat-fab (click)="openDialog()" color="primary">+</button>'
+  template: '<button mat-fab (click)="openDialog()" color="primary" style="font-size: 3rem;">+</button>'
 })
 export class NewTodoComponent implements OnInit {
   @Output() newTodo = new EventEmitter();
