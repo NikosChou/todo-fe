@@ -1,5 +1,8 @@
-<app-new-todo (newTodo)="createNewTodo($event)"></app-new-todo>
+<app-new-todo (newTodo)="createNewTodo($event)" class="app-new-todo"></app-new-todo>
 <app-todo-item *ngFor="let item of sortBy('createdAt')" [item]="item" style="padding: 10px"
-    (completed)="completeItem($event)"
-    (update)="updateItem($event)"
-    (delete)="deleteItem($event)"></app-todo-item>
+    (completed)="completeItem($event)" (update)="updateItem($event)" (delete)="deleteItem($event)"></app-todo-item>
+<div class="footer">
+    <mat-paginator [length]="totalItems" [pageSize]="pageSize" [pageSizeOptions]="[5, 10, 25, 100]"
+        (page)="changePage($event)">
+    </mat-paginator>
+</div>

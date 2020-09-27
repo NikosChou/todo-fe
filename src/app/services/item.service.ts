@@ -20,8 +20,8 @@ export class ItemService {
   constructor(
     private http: HttpClient) { }
 
-  getItemsResponse(page: number): Observable<ItemsResponse> {
-    return this.http.get<ItemsResponse>(`${this.itemUrl}?p=${page}`)
+  getItemsResponse(page: number, pageSize: number): Observable<ItemsResponse> {
+    return this.http.get<ItemsResponse>(`${this.itemUrl}?p=${page}&e=${pageSize}`)
       .pipe(
         tap(_ => this.log('fetched items')),
         catchError(this.handleError<ItemsResponse>('getItems', null))

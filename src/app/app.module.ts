@@ -11,6 +11,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatIconModule } from '@angular/material/icon';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatDialogModule } from '@angular/material/dialog';
+import { MatPaginatorModule } from '@angular/material/paginator';
 import { TodoItemComponent } from './todo-item/todo-item.component'
 import { FormsModule } from '@angular/forms';
 import { NewTodoComponent } from './new-todo/new-todo.component';
@@ -35,7 +36,8 @@ import { NewTodoDialogComponent } from './new-todo-dialog/new-todo-dialog.compon
     MatIconModule,
     MatCheckboxModule,
     FormsModule,
-    MatDialogModule
+    MatDialogModule,
+    MatPaginatorModule
   ],
   providers: [],
   bootstrap: [AppComponent]
